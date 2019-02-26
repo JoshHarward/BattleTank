@@ -5,7 +5,7 @@
 #include "Tank.h"
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
-#include "TankPlayerController.generated.h"
+#include "TankPlayerController.generated.h"  // Put new above this
 
 UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
