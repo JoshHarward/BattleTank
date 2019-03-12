@@ -9,6 +9,7 @@
 // Forward declarations
 class UTankBarrel;
 class UTankTurret;
+class UTankTrack;
 class UTankAimingComponent;
 class AProjectile;
 
@@ -21,7 +22,6 @@ public:
 	virtual void BeginPlay() override;
 
 	void AimAt(FVector HitLocation);
-
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
