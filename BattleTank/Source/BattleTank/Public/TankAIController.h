@@ -20,4 +20,7 @@ public:
 
 private:
 
+	// How cloase the AI can get
+	float AcceptanceRadius = 3000;
+
 };
