@@ -19,8 +19,6 @@ class BATTLETANK_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-	virtual void BeginPlay() override;
-
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable)
@@ -35,6 +33,8 @@ protected:
 
 private:	
 	ATank();
+
+	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
