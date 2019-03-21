@@ -6,6 +6,16 @@
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
 
+
+// Enum for aiming state
+UENUM()
+enum class EFiringState : uint8
+{ 
+	Locked,
+	Aiming,
+	Reloading
+};
+
  // Forward Declaration
 class UTankBarrel;
 class UTankTurret;
@@ -21,17 +31,19 @@ public:
 	UTankAimingComponent();
 
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
-
 	void SetTurretReference(UTankTurret* TurretToSet);
 
 	void AimAt(FVector OutHitLocation, float LaunchSpeed);
 
+protected:
+	// Protected because it is being called by a subclass, the TankAimingComponent blueprint inside Unreal
+	UPROPERTY(BlueprintReadOnly, Category = "State")
+	EFiringState FiringState = EFiringState::Reloading;
+
 private:	
 	UTankBarrel* Barrel = nullptr;
-
 	void MoveBarrelTowards(FVector AimDirection);
 
 	UTankTurret* Turret = nullptr;
-
 	void MoveTurretTowards(FVector AimDirection);
 };
