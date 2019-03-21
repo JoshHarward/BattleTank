@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Joshua Harward
 
 #include "TankPlayerController.h"
 #include "Tank.h"
